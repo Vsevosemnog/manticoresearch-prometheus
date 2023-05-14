@@ -1,0 +1,1640 @@
+{
+"annotations": {
+    "list": [
+    {
+        "builtIn": 1,
+        "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+        "limit": 100,
+        "matchAny": false,
+        "tags": [],
+        "type": "dashboard"
+        },
+        "type": "dashboard"
+    }
+    ]
+},
+"editable": true,
+"fiscalYearStartMonth": 0,
+"graphTooltip": 0,
+"iteration": 1682596131515,
+"links": [],
+"liveNow": false,
+"panels": [
+    {
+    "collapsed": false,
+    "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+    },
+    "id": 18,
+    "panels": [],
+    "title": "Row title",
+    "type": "row"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "thresholds"
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 1
+    },
+    "id": 30,
+    "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+        "calcs": [
+            "lastNotNull"
+        ],
+        "fields": "",
+        "values": false
+        },
+        "textMode": "auto"
+    },
+    "pluginVersion": "8.5.13",
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_ram_bytes{pod=\"$pod\"})/1024/1024",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "RAM-resident index part (MB)",
+    "type": "stat"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "thresholds"
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 1
+    },
+    "id": 32,
+    "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+        "calcs": [
+            "lastNotNull"
+        ],
+        "fields": "",
+        "values": false
+        },
+        "textMode": "auto"
+    },
+    "pluginVersion": "8.5.13",
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_disk_bytes{pod=\"$pod\"})/1024/1024",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Index files size (MB)",
+    "type": "stat"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "thresholds"
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 1
+    },
+    "id": 34,
+    "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+        "calcs": [
+            "lastNotNull"
+        ],
+        "fields": "",
+        "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+    },
+    "pluginVersion": "8.5.13",
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_found_rows_1min{pod=\"$pod\" , type=\"avg\"})",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Found rows by queries for last 1 minute",
+    "type": "gauge"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "thresholds"
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 1
+    },
+    "id": 28,
+    "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+        "calcs": [
+            "lastNotNull"
+        ],
+        "fields": "",
+        "values": false
+        },
+        "textMode": "auto"
+    },
+    "pluginVersion": "8.5.13",
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_indexed_bytes{pod=\"$pod\"})/1024/1024",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Indexed documents size (MB)",
+    "type": "stat"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "description": "",
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 50,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 5
+    },
+    "id": 2,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_query_time_1min{pod=\"$pod\",type=\"queries\"}[1m])) by (index)",
+        "hide": false,
+        "legendFormat": "{{index}}",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Query count (last 1 min)",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 50,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 5
+    },
+    "id": 38,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "rate(manticore_command_search_count{pod=\"$pod\"}[10m])",
+        "legendFormat": "{{pod}}",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Search quereis per second",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 50,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 13
+    },
+    "id": 4,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "rate(manticore_connections_count{pod=\"$pod\"}[10m])",
+        "legendFormat": "connections",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Connection count  per second",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 50,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 14
+    },
+    "id": 10,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_ram_bytes{pod=\"$pod\"})/1024/1024 ",
+        "interval": "",
+        "legendFormat": "RAM index part",
+        "range": true,
+        "refId": "A"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_indexed_bytes{pod=\"$pod\"})/1024/1024",
+        "hide": false,
+        "legendFormat": "Indexex docs",
+        "range": true,
+        "refId": "B"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_qcache_used_bytes{pod=\"$pod\"})/1024/1024",
+        "hide": false,
+        "legendFormat": "Query cache",
+        "range": true,
+        "refId": "C"
+        }
+    ],
+    "title": "Total RAM-resident index part (MB)",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 22
+    },
+    "id": 40,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_insert_count{pod=\"$pod\"}[1m]))",
+        "legendFormat": "insert",
+        "range": true,
+        "refId": "A"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_replace_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "replace",
+        "range": true,
+        "refId": "B"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(increase(manticore_command_commit_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "commit",
+        "range": true,
+        "refId": "C"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_suggest_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "suggest",
+        "range": true,
+        "refId": "D"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_callpq_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "callpq",
+        "range": true,
+        "refId": "E"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_delete_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "delete",
+        "range": true,
+        "refId": "F"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_ping_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "ping",
+        "range": true,
+        "refId": "G"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_sphinxql_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "sphinxql",
+        "range": true,
+        "refId": "H"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_flushattrs_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "flushattrs",
+        "range": true,
+        "refId": "I"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_status_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "status",
+        "range": true,
+        "refId": "J"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_persist_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "persist",
+        "range": true,
+        "refId": "K"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_keywords_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "keywords",
+        "range": true,
+        "refId": "L"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_update_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "update",
+        "range": true,
+        "refId": "M"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_excerpt_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "excerpt",
+        "range": true,
+        "refId": "N"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(rate(manticore_command_search_count{pod=\"$pod\"}[1m]))",
+        "hide": false,
+        "legendFormat": "search",
+        "range": true,
+        "refId": "O"
+        }
+    ],
+    "title": "Commands per second",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 50,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 23
+    },
+    "id": 8,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_found_rows_1min{pod=\"$pod\"})",
+        "legendFormat": "__auto",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Total found rows",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 30
+    },
+    "id": 44,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "rate(manticore_query_wall_seconds{pod=\"$pod\"}[1m])",
+        "legendFormat": "Query wall (1 min)",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Query time per second",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 32
+    },
+    "id": 42,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom",
+        "showLegend": true
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "manticore_workers_total_count{pod=\"$pod\"}",
+        "legendFormat": "worker threads",
+        "range": true,
+        "refId": "A"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "manticore_thread_count{pod=\"$pod\"}",
+        "hide": false,
+        "legendFormat": "active threads",
+        "range": true,
+        "refId": "B"
+        }
+    ],
+    "title": "Threads count",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 40
+    },
+    "id": 46,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom"
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "sum(manticore_killed_rate{pod=\"$pod\"}) by (index)",
+        "legendFormat": "{{index}}",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Killed rate",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 40
+    },
+    "id": 48,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom"
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "editorMode": "code",
+        "expr": "manticore_qcache_cached_queries_count{pod=\"$pod\"}",
+        "legendFormat": "{{pod}}",
+        "range": true,
+        "refId": "A"
+        }
+    ],
+    "title": "Query cache queries",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 48
+    },
+    "id": 50,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom"
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "expr": "manticore_qcache_hits_count{pod=\"$pod\"} / manticore_queries_count{pod=\"$pod\"}",
+        "refId": "A"
+        }
+    ],
+    "title": "Query cache hits count",
+    "type": "timeseries"
+    },
+    {
+    "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+    },
+    "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "palette-classic"
+        },
+        "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+            "legend": false,
+            "tooltip": false,
+            "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+            "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+            "group": "A",
+            "mode": "none"
+            },
+            "thresholdsStyle": {
+            "mode": "off"
+            }
+        },
+        "mappings": [],
+        "thresholds": {
+            "mode": "absolute",
+            "steps": [
+            {
+                "color": "green",
+                "value": null
+            },
+            {
+                "color": "red",
+                "value": 80
+            }
+            ]
+        }
+        },
+        "overrides": []
+    },
+    "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 48
+    },
+    "id": 52,
+    "options": {
+        "legend": {
+        "calcs": [],
+        "displayMode": "list",
+        "placement": "bottom"
+        },
+        "tooltip": {
+        "mode": "single",
+        "sort": "none"
+        }
+    },
+    "targets": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "${Datasource}"
+        },
+        "expr": "manticore_qcache_used_bytes{pod=\"$pod\"}/1024/1024",
+        "refId": "A"
+        }
+    ],
+    "title": "Query cache size (MB)",
+    "type": "timeseries"
+    }
+],
+"refresh": "30s",
+"revision": 1,
+"schemaVersion": 36,
+"style": "dark",
+"tags": [],
+"templating": {
+    "list": [
+    {
+        "current": {
+        "selected": false,
+        "text": "Prod-prometheus",
+        "value": "Prod-prometheus"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+    },
+    {
+        "current": {
+        "selected": true,
+        "text": "manticore-manticoresearch-worker-0",
+        "value": "manticore-manticoresearch-worker-0"
+        },
+        "datasource": {
+        "type": "prometheus",
+        "uid": "${Datasource}"
+        },
+        "definition": "label_values(manticore_qcache_thresh_microseconds, pod)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "pod",
+        "multi": false,
+        "name": "pod",
+        "options": [],
+        "query": {
+        "query": "label_values(manticore_qcache_thresh_microseconds, pod)",
+        "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+    }
+    ]
+},
+"time": {
+    "from": "now-3h",
+    "to": "now"
+},
+"timepicker": {},
+"timezone": "",
+"title": "Manticore",
+"uid": "3Nl4gTY4z",
+"version": 4,
+"weekStart": ""
+}
